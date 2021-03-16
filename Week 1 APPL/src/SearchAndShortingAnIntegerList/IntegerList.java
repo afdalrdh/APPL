@@ -69,4 +69,57 @@ public class IntegerList {
         int temp = 0;
         list[minIndex] = temp; 
     } 
+    
+    public void replaceFirst(int oldVal, int newVal){
+        int loc = search(oldVal);
+        if(loc != -1){
+            list[loc] = newVal;
+        }
+    }
+    
+    void replaceAll(int oldVal, int newVal) {
+        int loc = -1;
+        for (int i = 0; i < list.length; i++) {
+            if (list[i] == oldVal) {
+                loc = i;
+                list[loc] = newVal;
+            }
+        }
+    }
+    
+    void sortDecreasing(){
+        int max;
+        for (int i = 0; i < list.length - 1; i++) {
+            max = i;
+            for (int j = i + 1; j < list.length; j++) {
+                if (list[j] > list[max]) {
+                    max = j;
+                }
+            }
+            int temp = list[i];
+            list[i] = list[max];
+            list[max] = temp;
+        }
+    }
+    
+    int binarySearchD(int target){
+        int min=0;
+        int max=list.length-1; 
+        int middle=0; 
+        int loc=-1;
+        while (loc == -1 && min <= max)
+        {
+            middle = (min+max) / 2;
+            if (target == list[middle])
+                loc = middle;
+            else {
+                if (target > list[middle])
+                    max = middle-1;
+                else
+                    min = middle+1;
+            }
+        }
+        return loc;
+    }
+    
 }

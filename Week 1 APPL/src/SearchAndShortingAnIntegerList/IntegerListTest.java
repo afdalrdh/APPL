@@ -35,7 +35,7 @@ public class IntegerListTest {
     //------------------------------------------------------- 
     public static void dispatch(int choice) 
     { 
-        int loc; 
+        int loc, oldVal, newVal; 
         switch(choice) 
         { 
             case 0: 
@@ -61,6 +61,32 @@ public class IntegerListTest {
             case 4: 
                 list.print(); 
                 break; 
+            case 5:
+                System.out.println("Enter the value to look for: ");
+                oldVal = scan.nextInt();
+                System.out.println("Enter the new value: ");
+                newVal = scan.nextInt();
+                list.replaceFirst(oldVal, newVal);
+                break;
+            case 6:
+                System.out.println("Enter the value to look for: ");
+                oldVal = scan.nextInt();
+                System.out.println("Enter the new value: ");
+                newVal = scan.nextInt();
+                list.replaceAll(oldVal, newVal);
+                break;
+            case 7:
+                list.sortDecreasing();
+                break;
+            case 8:
+                System.out.println("Enter the value to look for: ");
+                loc = list.binarySearchD(scan.nextInt());
+                if (loc != -1) {
+                    System.out.println("Found at location " + loc);
+                } else {
+                    System.out.println("Not in list");
+                }
+                break;
             default: 
             System.out.println("Sorry, invalid choice"); 
         } 
@@ -78,6 +104,10 @@ public class IntegerListTest {
         System.out.println("2: Sort the list using selection sort"); 
         System.out.println("3: Find an element in the list using linear search"); 
         System.out.println("4: Print the list"); 
+        System.out.println("5: Replace first value");
+        System.out.println("6: Replace all value");
+        System.out.println("7: Sort decreasing");
+        System.out.println("8: Binary search");
         System.out.print("\nEnter your choice: "); 
     } 
 }

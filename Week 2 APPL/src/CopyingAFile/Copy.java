@@ -4,16 +4,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author afdalrdh
- */
 public class Copy {
      public static void main(String[] args){
         Scanner input_scanner;
@@ -24,9 +14,9 @@ public class Copy {
         
         while(!copied) {
             try {
-                input_scanner = new Scanner(System.in);
+                Scanner input = new Scanner(System.in);
                 System.out.print("Your file name: ");
-                file_name = input_scanner.nextLine();
+                file_name = input.nextLine();
                 user_file = new File(file_name);
                 if(user_file == null) {
                     throw new FileNotFoundException();

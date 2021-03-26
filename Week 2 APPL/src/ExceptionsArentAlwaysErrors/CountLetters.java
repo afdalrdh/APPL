@@ -1,3 +1,5 @@
+package ExceptionsArentAlwaysErrors;
+
 // **************************************************************** 
 // CountLetters.java 
 // 
